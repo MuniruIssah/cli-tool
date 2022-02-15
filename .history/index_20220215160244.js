@@ -72,8 +72,8 @@ const requirements = [
 // requesting for all requirements
 async function handleRequestRequirements() {
   const answers = await inquirer.prompt(requirements);
-  let { playerName: player, ...rest } = answers;
-  console.log(answers);
+  let { playerName:player, ...rest } = answers;
+  console.log(answers)
   // process.exit(1)
   playerName = player;
   options = rest;
@@ -86,8 +86,8 @@ async function handleQuizLoad() {
   if (data) {
     spinner.success({ text: "Succesfully Loaded Environment.." });
     qAndAs = formatResultsToQuiz(data);
-  } else {
-    spinner.error({ text: "Failed to Load the Environment.." });
+  }else{
+    
   }
 }
 
@@ -109,7 +109,7 @@ async function scoreSwitch() {
   console.log(
     `Your score is : ${score}/${qAndAs.answers.length} percent is ${percentScore}`
   );
-
+  
   switch (true) {
     case percentScore < 20:
       babality(playerName);
@@ -129,9 +129,7 @@ async function scoreSwitch() {
     default:
       break;
   }
-  console.log(
-    chalk.bgGray(`Your score is : ${score} / ${qAndAs.answers.length}`)
-  );
+  console.log(chalk.bgGray(`Your score is : ${score} / ${qAndAs.answers.length}`))
 }
 
 await welcome();
