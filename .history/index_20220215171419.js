@@ -138,8 +138,8 @@ async function scoreSwitch() {
 await welcome();
 await handleRequestRequirements();
 await handleQuizLoad();
-// await questionTime();
-// await scoreSwitch();
+await questionTime();
+await scoreSwitch();
 
 // await question1();
 
