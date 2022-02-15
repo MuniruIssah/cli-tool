@@ -13,7 +13,7 @@
 
 # misc
 .DS_Store
-.env
+.wnv
 
 
 npm-debug.log*
