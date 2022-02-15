@@ -5,7 +5,7 @@ export default async function getQuiz({
   tags = "Javascript",
 }) {
   const response = await fetch(
-    `https://quizapi.io/api/v1/questions?apiKey=JqsS8lLB9Uu9z4KTWTPlcLInb0xj4tlzxJNcgUQa&limit=${limit}&category=Code&tags=${tags}&difficulty=${difficulty}`
+    `https://quizapi.io/api/v1/questions?apiKey=${process.env.QUIZ_API}&limit=${limit}&category=Code&tags=${tags}&difficulty=${difficulty}`
   );
 
   const results = await response.json();
