@@ -74,7 +74,6 @@ const requirements = [
 async function handleRequestRequirements() {
   const answers = await inquirer.prompt(requirements);
   let { playerName: player, ...rest } = answers;
-  console.log(answers);
   // process.exit(1)
   playerName = player;
   options = rest;
@@ -87,7 +86,7 @@ async function handleQuizLoad() {
   if (data) {
     spinner.success({ text: "Succesfully Loaded Environment.." });
     console.log(data)
-    qAndAs = formatResultsToQuiz(data);
+    // qAndAs = formatResultsToQuiz(data);
   } else {
     spinner.error({ text: "Failed to Load the Environment.." });
   }
@@ -139,8 +138,8 @@ async function scoreSwitch() {
 await welcome();
 await handleRequestRequirements();
 await handleQuizLoad();
-await questionTime();
-await scoreSwitch();
+// await questionTime();
+// await scoreSwitch();
 
 // await question1();
 
